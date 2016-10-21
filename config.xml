@@ -28,4 +28,16 @@
     <plugin name="cordova-plugin-file" spec="~4.3.0" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.0" />
     <plugin name="cordova-plugin-media" spec="~2.4.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
+    
+    <platform name="android">
+        <splash src="splashscreen.png" />
+    </platform>
+    <platform name="ios">
+        <splash src="splashscreen.png" width="320" height="480" />
+    </platform>
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="SplashShowOnlyFirstTime" value="true" />
 </widget>

@@ -6,12 +6,6 @@ body {
     padding: 0px;
 }
 
-.loading h1 {
-    top: 20%;
-    text-align: center;
-    display: block;
-}
-
 .main-menu {
     left: 0px;
     top: 0px;
@@ -19,7 +13,6 @@ body {
     width: 100%;
     text-align: center;
     margin: 0px;
-    display: none;
 }
 
 .main-menu div {
