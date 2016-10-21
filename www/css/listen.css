@@ -1,0 +1,21 @@
+.top-menu {
+    position: absolute;
+    height: 60px;
+    width: 100%
+}
+
+.top-menu span {
+    height: 100%
+}
+
+.top-menu .back-button {
+    float: left;
+}
+
+.top-menu .search {
+    float: right;
+}
+
+.top-menu span img {
+    height: 100%;
+}
