@@ -50,7 +50,6 @@ var app = {
 };
 
 function load() {
-    alert("hello");
     document.getElementById("loading").style.display = "none";
     document.getElementById("main-menu").style.display = "block";
 }
