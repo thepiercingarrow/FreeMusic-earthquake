@@ -1,3 +1,7 @@
+body {
+    padding: 0px;
+}
+
 .top-menu {
     position: absolute;
     height: 60px;
