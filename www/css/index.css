@@ -39,33 +39,30 @@ body {
 .main-menu div {
     padding: 0px;
     margin: 0px;
-}
-
-.main-menu div.col1 {
     white-space: nowrap;
     width: 100%;
     height: 33%;
 }
 
-.main-menu div.col1 div.listen {
+.main-menu div.col1 a div.listen {
     left: 0px;
     top: 0px;
     height: 100%;
     width: 50%;
 }
 
-.main-menu div.col1 div.add-mp3 {
+.main-menu div.col1 a div.add-mp3 {
     left: 50%;
     top: 0px;
     height: 100%;
     width: 50%;
 }
 
-.main-menu div div {
+.main-menu div a div {
     display: inline-block;
 }
 
-.main-menu div div img {
+.main-menu div a div img {
     height: 80%;
     width: 80%;
 }
