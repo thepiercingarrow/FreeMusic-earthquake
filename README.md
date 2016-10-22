@@ -3,4 +3,4 @@ Download music to listen to on your phone. Make sure you follow copyright law bl
 
 # License
 All code is under the GPLv3 (LICENSE.txt).
-I am releasing all images as public domain.
+All images are under Creative Commons Attribution-ShareAlike 4.0 International.
