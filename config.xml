@@ -35,6 +35,12 @@
     </platform>
     <platform name="ios">
         <splash src="splashscreen.png" width="320" height="480" />
+	<splash src="splashscreen.png" width="640" height="960" />
+	<splash src="splashscreen.png" width="768" height="1024" />
+	<splash src="splashscreen.png" width="1536" height="2048" />
+	<splash src="splashscreen.png" width="640" height="1136" />
+	<splash src="splashscreen.png" width="750" height="1334" />
+	<splash src="splashscreen.png" width="1242" height="2208" />
     </platform>
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
