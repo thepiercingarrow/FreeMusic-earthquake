@@ -1,4 +1,7 @@
 *~
+*.frp
 /platforms
 /plugins
+/splashscreens
+/icons
 .DS_Store
