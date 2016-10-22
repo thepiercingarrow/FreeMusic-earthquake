@@ -1,6 +1,6 @@
 #!/bin/bash
 COMMAND() {
-    convert icon.png -scale $1 icons/icon$1.png
+    convert icon.png -scale $1x$1\! icons/icon$1.png
 }
 mkdir -p icons/
 COMMAND 180
