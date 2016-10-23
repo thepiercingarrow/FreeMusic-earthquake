@@ -8,20 +8,23 @@ function encodeB64(str) {
 	    }));
 }
 
-function downloadFile(downloadURI, path) {
-    var fileTransfer = new FileTransfer();
-    var uri = encodeURI(downloadURI);
-
+function downloadFile(downloadURI, path, save) {
+    new FileTransfer().download(uri, path, onDownloadSuccess, onDownloadError);
     function onDownloadSuccess(entry) {
-	dbg("download complete: " + entry.toURL());
+	alert("download complete: " + entry.toURL());
+	// then hide the download progress screen
+	if (save)
+	    
     }
-
     function onDownloadError(error) {
-	dbg("download error source " + error.source);
-	dbg("download error target " + error.target);
-	dbg("upload error code" + error.code);
+	alert("download error source " + error.source + '<br>' +
+	      "download error target " + error.target + '<br>' +
+	      "error code" + error.code);
+	// hide download progress screen
     }
+    return path;
+}
 
-    fileTransfer.download(uri, path + encodeB64(downloadURI) + '.mp3', onDownloadSuccess, onDownloadError);
-    return fileTransfer;
+function downloadURL(URL, path, save) {
+    return downloadFile(encodeURI(URL), path + encodeB64(URL) + '.mp3', save)
 }

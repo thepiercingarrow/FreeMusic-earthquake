@@ -2,14 +2,37 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none; /* prevent copy paste; to allow, change 'none' to 'text' */
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     box-sizing: border-box;
     margin: 0px;
     height: 100%;
     width: 100%;
+}
+
+.top-menu {
+    top: 0px;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+}
+
+.top-button {
+    height: 100%
+}
+
+.back-button {
+    float: left;
+}
+
+.top-menu-img {
+    height: 100%;
 }

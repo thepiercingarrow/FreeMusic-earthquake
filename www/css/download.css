@@ -1,0 +1,32 @@
+body {
+    padding-top: 50px;
+}
+
+.downloadUI {
+    height: 100%;
+    width: 100%;
+    text-align: ce3nter;
+}
+
+.downloadUI .name {
+    height: 40%;
+}
+
+.downloadUI .name p {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.downloadUI .URL {
+    height: 40%;
+}
+
+.downloadUI .download-button {
+    height: 20%;
+}
+
+.downloadUI .download-button h1 {
+    position: relative;
+    top: 20%;
+    margin: 0;
+}
