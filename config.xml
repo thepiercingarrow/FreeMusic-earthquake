@@ -53,8 +53,10 @@
         <splash height="1334" src="splashscreens/splashscreen750x1334.png" width="750" />
         <splash height="2208" src="splashscreens/splashscreen1242x2208.png" width="1242" />
     </platform>
-    <hook src="scripts/copy-icons.sh" type="before_build" />
-    <hook src="scripts/copy-splashscreens.sh" type="before_build" />
+    <hook src="scripts/copy-icons.sh" type="before_platform_add" />
+    <hook src="scripts/copy-splashscreens.sh" type="before_platform_add" />
+    <hook src="scripts/copy-icons.sh" type="before_prepare" />
+    <hook src="scripts/copy-splashscreens.sh" type="before_prepare" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="true" />

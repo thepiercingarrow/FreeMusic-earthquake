@@ -1,6 +1,8 @@
 #!/bin/bash
 COMMAND() {
-    convert splashscreen.png -scale $1\! splashscreens/splashscreen$1.png
+    if [ ! -f splashscreens/splashscreen$1.png ]; then
+	convert splashscreen.png -scale $1\! splashscreens/splashscreen$1.png
+    fi
 }
 mkdir -p splashscreens/
 COMMAND 320x480
