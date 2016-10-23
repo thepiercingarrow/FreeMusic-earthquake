@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.gmail.thepiercingarrow.freemusic" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>FreeMusic</name>
+<widget id="com.gmail.thepiercingarrow.freemusicplayer" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>FreeMusicPlayer</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+      A Free Music Player for mobile.
     </description>
     <author email="thepiercingarrow@gmail.com" href="http://thepiercingarrow.github.io">
         Maxwell Zhao
