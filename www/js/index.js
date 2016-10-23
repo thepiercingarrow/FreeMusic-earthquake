@@ -1,13 +1,8 @@
-var app = {
-    initialize: function() {
-        this.bindEvents();
-    },
-    bindEvents: function() {
-	document.addEventListener("deviceready", this.load, false);
-    },
-    load: function() {
-	navigator.spashscreen.hide();
-    }
-};
+document.addEventListener("deviceready", load, false);
 
-app.initialize();
+function load() {
+    if (StatusBar.isVisible) {
+	StatusBar.hide();
+    }
+    navigator.splashscreen.hide();
+}
