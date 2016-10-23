@@ -24,37 +24,22 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <plugin name="cordova-plugin-file" spec="~4.3.0" />
-    <plugin name="cordova-plugin-file-transfer" spec="~1.6.0" />
-    <plugin name="cordova-plugin-media" spec="~2.4.0" />
-    <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
     <platform name="ios">
-        <!-- iOS 8.0+ -->
-        <!-- iPhone 6 Plus  -->
-        <icon src="icons/icon180.png" width="180" height="180" />
-        <!-- iOS 7.0+ -->
-        <!-- iPhone / iPod Touch  -->
-        <icon src="icons/icon60.png" width="60" height="60" />
-        <icon src="icons/icon120.png" width="120" height="120" />
-        <!-- iPad -->
-        <icon src="icons/icon76.png" width="76" height="76" />
-        <icon src="icons/icon152.png" width="152" height="152" />
-        <!-- iOS 6.1 -->
-        <!-- Spotlight Icon -->
-        <icon src="icons/icon40.png" width="40" height="40" />
-        <icon src="icons/icon80.png" width="80" height="80" />
-        <!-- iPhone / iPod Touch -->
-        <icon src="icons/icon57.png" width="57" height="57" />
-        <icon src="icons/icon114.png" width="114" height="114" />
-        <!-- iPad -->
-        <icon src="icons/icon72.png" width="72" height="72" />
-        <icon src="icons/icon144.png" width="144" height="144" />
-        <!-- iPhone Spotlight and Settings Icon -->
-        <icon src="icons/icon29.png" width="29" height="29" />
-        <icon src="icons/icon58.png" width="58" height="58" />
-        <!-- iPad Spotlight and Settings Icon -->
-        <icon src="icons/icon50.png" width="50" height="50" />
-        <icon src="icons/icon100.png" width="100" height="100" />
+        <icon height="180" src="icons/icon180.png" width="180" />
+        <icon height="60" src="icons/icon60.png" width="60" />
+        <icon height="120" src="icons/icon120.png" width="120" />
+        <icon height="76" src="icons/icon76.png" width="76" />
+        <icon height="152" src="icons/icon152.png" width="152" />
+        <icon height="40" src="icons/icon40.png" width="40" />
+        <icon height="80" src="icons/icon80.png" width="80" />
+        <icon height="57" src="icons/icon57.png" width="57" />
+        <icon height="114" src="icons/icon114.png" width="114" />
+        <icon height="72" src="icons/icon72.png" width="72" />
+        <icon height="144" src="icons/icon144.png" width="144" />
+        <icon height="29" src="icons/icon29.png" width="29" />
+        <icon height="58" src="icons/icon58.png" width="58" />
+        <icon height="50" src="icons/icon50.png" width="50" />
+        <icon height="100" src="icons/icon100.png" width="100" />
     </platform>
     <platform name="android">
         <splash src="splashscreen.png" />
@@ -68,10 +53,15 @@
         <splash height="1334" src="splashscreens/splashscreen750x1334.png" width="750" />
         <splash height="2208" src="splashscreens/splashscreen1242x2208.png" width="1242" />
     </platform>
-    <hook type="before_build" src="scripts/copy-icons.sh" />
-    <hook type="before_build" src="scripts/copy-splashscreens.sh" />
+    <hook src="scripts/copy-icons.sh" type="before_build" />
+    <hook src="scripts/copy-splashscreens.sh" type="before_build" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="true" />
+    <preference name="iosPersistentFileLocation" value="Library" />
+    <plugin name="cordova-plugin-file" spec="~4.3.0" />
+    <plugin name="cordova-plugin-file-transfer" spec="~1.6.0" />
+    <plugin name="cordova-plugin-media" spec="~2.4.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
 </widget>

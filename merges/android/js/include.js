@@ -1,2 +1,6 @@
 var IS_ANDROID = true;
-var DOWNLOAD_PATH = cordova.file.dataDirectory;
+
+document.addEventListener("deviceready", () => {
+	var READY;
+	var DOWNLOAD_PATH = cordova.file.dataDirectory;
+    });

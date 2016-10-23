@@ -1,2 +1,8 @@
 var IS_IOS = true;
-var DOWNLOAD_PATH = cordova.file.documentsDirectory;
+
+document.addEventListener("deviceready", () => {
+	var READY = true;
+	var DOWNLOAD_PATH = cordova.file.documentsDirectory;
+    });
+
+alert('MERGED');
