@@ -3,30 +3,32 @@ body {
 }
 
 .downloadUI {
-    height: 100%;
     width: 100%;
-    text-align: ce3nter;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
-.downloadUI .name {
-    height: 40%;
+.downloadUI div {
+    border-bottom: 1px solid;
 }
 
-.downloadUI .name p {
-    margin: 0 auto;
-    padding: 0;
-}
-
-.downloadUI .URL {
-    height: 40%;
+.downloadUI div input {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    border: 0px;
 }
 
 .downloadUI .download-button {
-    height: 20%;
+    background: orange; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom right, rgba(255,165,74), rgba(255,130,0));
+    padding: 15px;
 }
 
 .downloadUI .download-button h1 {
     position: relative;
-    top: 20%;
     margin: 0;
 }

@@ -8,23 +8,18 @@ function encodeB64(str) {
 	    }));
 }
 
-function downloadFile(downloadURI, path, save) {
-    new FileTransfer().download(uri, path, onDownloadSuccess, onDownloadError);
-    function onDownloadSuccess(entry) {
-	alert("download complete: " + entry.toURL());
-	// then hide the download progress screen
-	if (save)
-	    
-    }
-    function onDownloadError(error) {
-	alert("download error source " + error.source + '<br>' +
-	      "download error target " + error.target + '<br>' +
-	      "error code" + error.code);
-	// hide download progress screen
-    }
-    return path;
+function downloadFile(uri, file_path, onSucc, onErr) {
+    // show download progress screen
+    new FileTransfer().download(uri, file_path, onSucc, onErr);
+    // hide download progress screen
 }
 
-function downloadURL(URL, path, save) {
-    return downloadFile(encodeURI(URL), path + encodeB64(URL) + '.mp3', save)
+var db = openDatabase('files', '', 'files', 2 * 1024 * 1024);
+
+function getDbSize(func) {
+    db.transaction(tx => {
+	tx.executeSql('SELECT * FROM FILES', [], (tx, results) => {
+	    func(results.rows.length);
+	});
+    });
 }
