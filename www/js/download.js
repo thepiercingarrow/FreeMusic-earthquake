@@ -1,24 +1,29 @@
+var name_field = document.getElementById('name-field');
+var url_field = document.getElementById('url-field');
+var READY = false;
+
+
 function downloadMusic(URL, name) {
-    // show download progress screen
     var file_path = 'cdvfile://localhost/persistent/' + encodeB64(URL);
+    if (localStorage.getItem(name))
+	if (!confirm("Song name already exists! Replace '" + name + "'?"))
+	    alert("Download cancelled.");
+    return;
     downloadFile(encodeURI(URL), file_path,
-		 entry => {
-		     db.transaction(tx => {
-			 tx.executeSql('CREATE TABLE IF NOT EXISTS FILES (id, name, path)');
-			 console.log(getDbSize());
-			 getDbSize(size => {
-			     tx.executeSql('INSERT INTO FILES VALUES (?, ?, ?)', [size + 1, name, file_path]);
-			 });
-		     });
-		 },
-		 error => {
-		     alert("download error source " + error.source + '<br>' +
-			   "download error target " + error.target + '<br>' +
-			   "error code" + error.code);
-		 });
+		 entry => localStorage.setItem(name, file_path),
+		 error => alert("download error code" + error.code));
 }
 
 document.addEventListener("deviceready", () => {
-    downloadMusic("https://ptpb.pw/3W4j.mp3", 'Rocky Mountain High', true);
-    // show progress screen, cancel button, etc
+    READY = true;
+    // downloadMusic("https://ptpb.pw/3W4j.mp3", 'Rocky Mountain High');
+});
+
+document.getElementById('download-button').addEventListener("click", () => {
+    if (!READY) {
+	alert('Device not ready!');
+	return;
+    }
+    dbg('clicked: '+url_field.value+name_field.value);
+    downloadMusic(url_field.value, name_field.value);
 });

@@ -3,9 +3,7 @@ function dbg(str) {
 }
 
 function encodeB64(str) {
-    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => {
-		return String.fromCharCode('0x' + p1);
-	    }));
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => String.fromCharCode('0x' + p1)));
 }
 
 function downloadFile(uri, file_path, onSucc, onErr) {
@@ -14,12 +12,38 @@ function downloadFile(uri, file_path, onSucc, onErr) {
     // hide download progress screen
 }
 
-var db = openDatabase('files', '', 'files', 2 * 1024 * 1024);
-
-function getDbSize(func) {
-    db.transaction(tx => {
-	tx.executeSql('SELECT * FROM FILES', [], (tx, results) => {
-	    func(results.rows.length);
-	});
+function createFile(name, onSucc, onErr) {
+    requestFileSystem(LocalFileSystem.PERSISTENT, 0, fs => {
+	fs.root.getFile(name, { create: true, exclusive: false }, onSucc, onErr);
     });
+}
+
+function localStorageToStr() {
+    var files = {};
+    for (var i = 0; i < localStorage.length; ++i) {
+        var key = localStorage.key(i);
+        var val = localStorage.getItem(key);
+        files[key] = val;
+    }
+    return JSON.stringify(files);
+}
+
+function strToLocalStorage(str) {
+    var obj = JSON.parse(str);
+    for (var property in obj)
+        if (obj.hasOwnProperty(property))
+            localStorage.setItem(property, obj[property]);
+}
+
+function strToFile(fileEntry, str) {
+    fileEntry.createWriter(fileWriter => {
+	blob = new Blob([str], { type: 'text/plain' });
+	fileWriter.write(blob);
+    });
+}
+
+function backupLocalStorage() {
+    createFile('localstoragebackup.txt',
+	       entry => strToFile(entry, localStorageToStr()),
+	       error => console.log(error));
 }
