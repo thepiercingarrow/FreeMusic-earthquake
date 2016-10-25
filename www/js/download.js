@@ -2,13 +2,13 @@ var name_field = document.getElementById('name-field');
 var url_field = document.getElementById('url-field');
 var READY = false;
 
-
 function downloadMusic(URL, name) {
     var file_path = 'cdvfile://localhost/persistent/' + encodeB64(URL);
     if (localStorage.getItem(name))
-	if (!confirm("Song name already exists! Replace '" + name + "'?"))
+	if (!confirm("Song name already exists! Replace '" + name + "'?")) {
 	    alert("Download cancelled.");
-    return;
+	    return;
+	}
     downloadFile(encodeURI(URL), file_path,
 		 entry => localStorage.setItem(name, file_path),
 		 error => alert("download error code" + error.code));
@@ -24,6 +24,5 @@ document.getElementById('download-button').addEventListener("click", () => {
 	alert('Device not ready!');
 	return;
     }
-    dbg('clicked: '+url_field.value+name_field.value);
     downloadMusic(url_field.value, name_field.value);
 });
