@@ -3,51 +3,21 @@ body {
 }
 
 .main-menu {
-    left: 0px;
-    top: 0px;
-    height: 100%;
     width: 100%;
     text-align: center;
-    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .main-menu div {
-    padding: 0px;
-    margin: 0px;
-    white-space: nowrap;
+    border-bottom: 1px solid;
+}
+
+.main-menu div a div p {
     width: 100%;
-    height: 33%;
-}
-
-.main-menu div a {
     height: 100%;
-    width: 50%;
-    float: left;
-}
-
-.main-menu div a div {
-    height: 100%;
-    width: 100%;
-    white-space: normal;
-}
-
-.main-menu div a div h1 {
-    color: black;
-    overflow: auto;
-}
-
-.main-menu div.col1 a div.listen {
-    background: red;
-    left: 0px;
-    top: 0px;
-}
-
-.main-menu div.col1 a div.add-mp3 {
-    background: green;
-    left: 50%;
-    top: 0px;
-}
-
-.main-menu div a div {
-    display: inline-block;
+    padding: 20px 0px;
+    text-align: center;
+    text-overflow: ellipsis;
 }
