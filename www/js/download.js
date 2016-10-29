@@ -17,7 +17,7 @@ document.addEventListener("deviceready", () => {
     READY = true;
 });
 
-document.getElementById('download-button').addEventListener("click", () => {
+$('download-button').addEventListener("click", () => {
     if (!READY) {
 	alert('Device not ready!');
 	return;

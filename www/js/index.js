@@ -1,10 +1,10 @@
 document.addEventListener("deviceready", load);
 
-document.getElementById('listen-link').addEventListener("click", e => {
+$('listen-link').addEventListener("click", e => {
     window.location.replace('listen/index.html');
 });
 
-document.getElementById('download-link').addEventListener("click", e => {
+$('download-link').addEventListener("click", e => {
     window.location.replace('download.html');
 });
 
