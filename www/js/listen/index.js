@@ -1,3 +1,7 @@
+$('back-button').addEventListener("click", e => {
+    window.location.replace('../index.html');
+});
+
 function play_song(path) {
     var media = new Media(path, () => {
 	    dbg("Song finished.");
